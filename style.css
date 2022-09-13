@@ -58,7 +58,7 @@ header h1 {
     height: 3px;
     background-color: white;
     margin: 8px;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 /* nav */
@@ -76,8 +76,7 @@ nav ul {
     flex-wrap: nowrap;
 }
 
-nav li {
-    padding: 0 10px;
+nav li a {
     align-self: center;
     font-size: 17px;
     padding: 5px 10px;
@@ -111,15 +110,12 @@ nav form button {
     margin-left: 4px;
 }
 
-/* hover  */
-nav li:hover {
+/* nav hover */
+li a:hover {
     cursor: pointer;
-    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.9);
-}
-
-nav li:hover a {
     color: var(--header-blue);
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.2);
 }
 
 nav form button:hover {
@@ -132,28 +128,156 @@ nav form button:hover {
 /* -------------------------- */
 /* main */
 main {
-    width: 100%;
-    margin: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
+/* genres and filter */
 .filter {
+    margin: 10px 0 5px 5px;
+    border-radius: 7px;
     background-color: var(--sidebar-blue);
-    width: 200px;
-    height: 100%;
-    position: fixed;
+    flex-basis: 170px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
     left: 0;
     top: 0;
-    padding-top: 100px;
-    z-index: 0;
-    /* transform: translateX(-80%); */
+    padding-top: 25px;
+    padding-left: 10px;
+}
+
+.filter h3 {
+    font-size: 20px;
+}
+
+.filter ul {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 8px;
+    padding-left: 3px;
+    /* margin-right: 15px; */
+}
+
+.filter ul li {
+    padding: 5px 0;
+}
+
+.genres li a {
+    padding: 3px;
+    font-size: 16px;
+    margin: 0 5px;
+    border-radius: 6px;
+}
+
+/* movies */
+.right-side {
+    display: inline-block;
 }
 
 .container {
-    margin-left: 250px;
-    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+.movie {
+    position: relative;
+    width: 250px;
+    margin: 12px;
+    border-radius: 10px;
+    background-color: var(--header-blue);
+    overflow: hidden;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.664);
+}
 
+.movie img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.movie-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 10px 7px 10px;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.movie-info span {
+    padding: 3px 7px;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: var(--mid-blue);
+    border-radius: 4px;
+}
+
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    color: black;
+    max-height: 60%;
+    padding: 11px;
+    transform: translateY(101%);
+    transition: transform 0.15s ease-in;
+}
+
+.overview h3 {
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 3px;
+}
+
+.overview .overview-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+
+.overview-info span {
+    color: var(--dark-blue);
+    font-weight: 600;
+    padding: 4px 7px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* movie hover */
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+.movie:hover img {
+    filter: blur(2px);
+    transform: scale(103%);
+}
+
+.overview-info span:hover {
+    background-color: var(--dark-blue);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.664);
+}
+
+::selection {
+    background-color: var(--button-green);
+}
 
 /* responsive */
 @media screen and (max-width:990px) {
@@ -215,6 +339,28 @@ main {
         margin-right: 10px;
     }
 
+    /* main filter */
+    .filter {
+        flex-basis: 68px;
+        flex-shrink: 0;
+        transition: 0.4s;
+    }
+
+    .filter ul,
+    .filter h3 {
+        opacity: 0;
+        transform: translateX(-300%);
+        transition: 0.3s;
+    }
+
+    .filter .burger {
+        display: inline-block;
+        position: relative;
+        margin-top: -15px;
+        left: 0px;
+        top: 0px;
+    }
+
     /* active class for toggle */
     .nav-container.active {
         height: 270px;
@@ -227,6 +373,17 @@ main {
 
     .nav-container.active form {
         opacity: 1;
+    }
+
+
+    .filter.active-filter {
+        flex-basis: 145px;
+    }
+
+    .filter.active-filter ul,
+    .filter.active-filter h3 {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     /* burger animate  */

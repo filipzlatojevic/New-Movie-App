@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Movie App</title>
 </head>
@@ -14,7 +15,7 @@
     <header>
 
         <div class="logo">
-            <a href="#">
+            <a href="#" class="homeBtn">
                 <h1>Movie App</h1>
             </a>
         </div>
@@ -26,11 +27,11 @@
 
         <nav class="nav-container">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Info</a></li>
-                <li><a href="#">Top Rated</a></li>
-                <li><a href="#">Popular</a></li>
-                <li><a href="#">Upcoming</a></li>
+                <li><a href="#" class="homeBtn">Home</a></li>
+                <li><a href="#" id="info">Info</a></li>
+                <li><a href="#" id="topRated">Top Rated</a></li>
+                <li><a href="#" id="popular">Popular</a></li>
+                <li><a href="#" id="upcoming">Upcoming</a></li>
             </ul>
 
             <form id="searchForm" role="search">
@@ -43,8 +44,13 @@
 
     <main>
         <div class="filter">
-            <h2>Genres</h2>
-            <ul class="dropdown-meny">
+            <div class="burger filter-burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <h3>Genres:</h3>
+            <ul class="genres">
                 <li value="28"><a class="dropdown-item" href="#">Action</a></li>
                 <li value="12"><a class="dropdown-item" href="#">Adventure</a></li>
                 <li value="16"><a class="dropdown-item" href="#">Animation</a></li>
@@ -60,77 +66,28 @@
             </ul>
         </div>
 
-        <div class="container">
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500//AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" alt="Image">
-                <div class="movie-info">
-                    <h3>Movie Title</h3>
-                    <span class="rate">9.8</span>
-                </div>
-                <div class="overview">
-                    <h4>Overview</h4>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500//AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" alt="Image">
-                <div class="movie-info">
-                    <h3>Movie Title</h3>
-                    <span class="rate">9.8</span>
-                </div>
-                <div class="overview">
-                    <h4>Overview</h4>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500//AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" alt="Image">
-                <div class="movie-info">
-                    <h3>Movie Title</h3>
-                    <span class="rate">9.8</span>
-                </div>
-                <div class="overview">
-                    <h4>Overview</h4>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500//AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" alt="Image">
-                <div class="movie-info">
-                    <h3>Movie Title</h3>
-                    <span class="rate">9.8</span>
-                </div>
-                <div class="overview">
-                    <h4>Overview</h4>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="movie">
-                <img src="https://image.tmdb.org/t/p/w500//AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" alt="Image">
-                <div class="movie-info">
-                    <h3>Movie Title</h3>
-                    <span class="rate">9.8</span>
-                </div>
-                <div class="overview">
-                    <h4>Overview</h4>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.
-                </div>
-            </div>
-        </div>
+        <div class="right-side">
+            <div class="container">
 
+                <div class="movie">
+                    <img src="https://image.tmdb.org/t/p/w500//AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" alt="Image">
+                    <div class="movie-info">
+                        <h3>Movie Title</h3>
+                        <span class="rate">9.8</span>
+                    </div>
+                    <div class="overview">
+                        <div class="overview-info">
+                            <h3>Overview</h3>
+                            <span class="seeMore">See more</span>
+                        </div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni quos nam voluptates aspernatur. Tenetur, cumque nemo
+                        similique minus amet sequi?
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <footer>
