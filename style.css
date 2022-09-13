@@ -2,6 +2,7 @@
 
 :root {
     --header-blue: #08161d;
+    --sidebar-blue: rgba(8, 22, 29, 0.9);
     --dark-blue: #0f2027;
     --mid-blue: #203a43;
     --light-blue: #2c5364;
@@ -29,17 +30,19 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 /* logo */
 header .logo {
-    min-width: 170px;
+    min-width: 200px;
     margin: 10px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 35px;
+    font-size: 43px;
     font-weight: 400;
 }
 
@@ -83,23 +86,29 @@ nav li {
 }
 
 /* nav form */
+nav form {
+    display: flex;
+}
+
 nav form input {
-    width: 190px;
-    height: 32px;
+    width: auto;
+    height: 37px;
     padding: 7px;
     border-radius: 7px;
-    font-size: 15px;
+    font-size: 16px;
     border: 1px solid whitesmoke;
 }
 
 nav form button {
-    width: 70px;
-    height: 32px;
+    width: 76px;
+    height: 37px;
     color: var(--button-green);
-    font-size: 16px;
+    font-size: 17px;
     border-radius: 7px;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid var(--button-green);
+    padding: 7px;
+    margin-left: 4px;
 }
 
 /* hover  */
@@ -120,18 +129,27 @@ nav form button:hover {
     transition: all 0.2s;
 }
 
+/* -------------------------- */
 /* main */
 main {
     width: 100%;
-    display: grid;
     margin: 10px;
 }
 
 .filter {
-    width: 15%;
+    background-color: var(--sidebar-blue);
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 100px;
+    z-index: 0;
+    /* transform: translateX(-80%); */
 }
 
 .container {
+    margin-left: 250px;
     width: 85%;
 }
 
@@ -190,7 +208,7 @@ main {
 
     nav form input {
         width: 100%;
-        margin-right: 7px;
+        margin-right: 3px;
     }
 
     nav form button {
