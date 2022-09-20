@@ -50,6 +50,18 @@ header h1 {
     font-weight: 400;
 }
 
+header h1 span {
+    display: inline-block;
+    transform: translateX(60px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+header span.fadeMove {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* burger */
 .burger {
     display: none;
@@ -422,7 +434,7 @@ footer p {
 
     /* burger animate  */
     .burger.active {
-        transform: rotate(360deg);
+        transform: rotate(270deg);
     }
 
     .burger.active .line1 {
@@ -455,7 +467,7 @@ footer p {
 
 .overlay-content {
     position: relative;
-    top: 25%;
+    top: 20%;
     width: 100%;
     text-align: center;
     display: flex;
@@ -463,6 +475,7 @@ footer p {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    padding-bottom: 20px;
 }
 
 .overlay .closebtn {

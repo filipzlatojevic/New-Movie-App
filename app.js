@@ -11,7 +11,6 @@ const links = document.querySelectorAll('.genres a');
 
 // Dates
 let currentDate = new Date().toJSON().slice(0, 10);
-
 let someDate = new Date();
 let result = someDate.setDate(someDate.getDate() + 60);
 let futureDate = new Date(result).toJSON().slice(0, 10);
@@ -127,10 +126,8 @@ function importMovies(res) {
             container.append(movieDiv);
 
             document.getElementById(id).addEventListener('click', function () {
-                console.log(id);
                 openNav(el);
             });
-
         }
     }
 }
@@ -149,12 +146,10 @@ async function openNav(movie) {
                 let { name, key, site } = video;
                 if (site == 'YouTube') {
                     videoList.push(`
-                
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" 
                     title="${name}" frameborder="0"
                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen></iframe>
-                    
                     `);
                 }
             });
